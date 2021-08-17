@@ -72,7 +72,7 @@ enum {
 enum {
   MU_RES_ACTIVE       = (1 << 0),
   MU_RES_SUBMIT       = (1 << 1),
-  MU_RES_CHANGE       = (1 << 2)
+  MU_RES_CHANGE       = (1 << 2),
 };
 
 enum {
@@ -88,7 +88,9 @@ enum {
   MU_OPT_AUTOSIZE     = (1 << 9),
   MU_OPT_POPUP        = (1 << 10),
   MU_OPT_CLOSED       = (1 << 11),
-  MU_OPT_EXPANDED     = (1 << 12)
+  MU_OPT_EXPANDED     = (1 << 12),
+  MU_OPT_LEAF         = (1 << 13),
+  MU_OPT_SELECTED     = (1 << 14)
 };
 
 enum {
@@ -292,5 +294,7 @@ int mu_begin_popup(mu_Context *ctx, const char *name);
 void mu_end_popup(mu_Context *ctx);
 void mu_begin_panel_ex(mu_Context *ctx, const char *name, int opt);
 void mu_end_panel(mu_Context *ctx);
+
+int mu_item_hovered(mu_Context* ctx);
 
 #endif
